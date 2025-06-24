@@ -1,0 +1,18 @@
+services:
+  waii_mcp:
+    container_name: waii_mcp
+    image: waii_mcp
+    env_file:
+      - .env
+    tty: true
+    build:
+      context: .
+    ports:
+      - "8011:8011"
+    networks:
+      - mi_metricinsights_net
+    volumes:
+      - .:/app
+networks:
+  mi_metricinsights_net:
+#    external: true

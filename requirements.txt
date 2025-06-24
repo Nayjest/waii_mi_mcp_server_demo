@@ -1,0 +1,7 @@
+ai-microcore==4.2.1
+requests
+mcp
+python-dotenv
+fastmcp~=2.8.0
+waii_sdk_py
+pandas
