@@ -31,6 +31,7 @@ def apply_concierge_formatting(chat_response: ChatResponse):
             references_section += concierge_widget(chat_response.response_data.data.rows, data_type="table")
         if "<chart>" in chat_response.response:
             chart_spec = json.loads(chat_response.response_data.chart.chart_spec.chart)
+            chart_spec["data"] = dict(values=chat_response.response_data.data.rows)
             references_section += concierge_widget(chart_spec, data_type="chart")
         return chat_response.response + "\n" + references_section
     except Exception as e:
