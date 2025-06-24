@@ -81,7 +81,7 @@ class Chatbot:
 
 def main():
     # Initialize FastMCP server
-    mcp = FastMCP("waii", port=MCP_PORT)
+    mcp = FastMCP("waii", host='0.0.0.0', port=MCP_PORT)
     
     # Initialize chatbot
     chatbot = Chatbot(WAII_URL, API_KEY, DATABASE_KEY)
